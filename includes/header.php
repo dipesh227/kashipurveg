@@ -25,7 +25,7 @@ include('function/function.php');
     <!-- top bar Start -->
     <div id="top">
         <!-- container bar Start left-->
-        <div class="container ">
+        <div class="container-fluid">
             <!--row start-->
             <div class="row">
                 <!-- col-md-6 start-->
@@ -44,13 +44,15 @@ include('function/function.php');
                 <!-- col-md-6 start right-->
                 <div class="col-md-6 ">
                     <ul class="menu">
-                        <li>
-                            <?php
-                            if (!isset($_SESSION['customer_phone'])) {
-                                echo '<a href="customer_registration">Register</a>';
-                            }
-                            ?>
-                        </li>
+                        <?php
+                        if (!isset($_SESSION['customer_phone'])) {
+                            echo '
+                            <li>
+                            <a href="customer_registration">Register</a>
+                            </li>
+                            ';
+                        }
+                        ?>
                         <li><a href="customer/my_account">My Account</a></li>
                         <li><a href="cart">Goto Cart</a></li>
                         <li>
@@ -73,7 +75,7 @@ include('function/function.php');
     <!-- top bar end -->
     <!-- nav bar start -->
     <div class="navbar navbar-default navbar-fixed" id="navbar">
-        <div class="container">
+        <div class="container-fluid">
             <!-- navbar logo start -->
             <div class="navbar-header">
                 <a href="./" class="navbar-brand home">
@@ -84,10 +86,22 @@ include('function/function.php');
                     <span class="sr-only">Toggle Navigetion</span>
                     <i class="fa fa-align-justify"></i>
                 </button>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#searchmob">
                     <span class="sr-only"></span>
                     <i class="fa fa-search"></i>
                 </button>
+            </div>
+            <div class="collapse clearfix" id="searchmob">
+                <form action="result" method="get" class="navbar-form">
+                    <div class="input-group">
+                        <input type="text" name="user_query" placeholder="Search" class="form-control" required>
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="submit" value="search" name="search">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </form>
             </div>
             <!-- navabr logo end -->
             <!-- navabr menu start -->
@@ -113,10 +127,14 @@ include('function/function.php');
                                     } ?>">
                             <a href="cart" class="">Shopping Cart</a>
                         </li>
-                        <li class="">
+                        <li class="<?php if (TITLE == 'about') {
+                                        echo 'active';
+                                    } ?>">
                             <a href="about" class="">About Us</a>
                         </li>
-                        <li class="">
+                        <li class="<?php if (TITLE == 'sevices') {
+                                        echo 'active';
+                                    } ?>">
                             <a href="sevices" class="">Sevices</a>
                         </li>
                         <li class="<?php if (TITLE == 'contectus') {
@@ -135,7 +153,7 @@ include('function/function.php');
                 <!-- cart end -->
                 <!-- search stat -->
                 <div class="navbar-collapse collapse-right">
-                    <button class="btn navbar-btn btn-primary" type="button" data-toggle="collapse" data-target="#search">
+                    <button style="margin-left: 10px;" class="btn navbar-btn btn-primary " type="button" data-toggle="collapse" data-target="#search">
                         <span class="sr-only">Toggle search</span>
                         <i class="fa fa-search"></i>
                     </button>

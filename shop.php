@@ -4,7 +4,7 @@ include('includes/header.php'); ?>
 <!-- content start -->
 <div id="content">
     <!-- container start -->
-    <div class="container">
+    <div class="container-fluid">
         <!-- col-md-12 start -->
         <div class="col-md-12">
             <!-- breadcoumb start -->

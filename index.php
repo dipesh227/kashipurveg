@@ -2,7 +2,7 @@
 define('TITLE', 'home');
 include('includes/header.php'); ?>
 <!-- slaider start -->
-<div class="container" id="slider">
+<div class="container-fluid" id="slider">
     <div class="col-md-12">
         <!-- outre start slaider -->
         <div class="carousel slide" id="myCarousel" data-ride="carousel">
@@ -58,7 +58,7 @@ include('includes/header.php'); ?>
 <!-- start advantage -->
 <div id="advantage">
     <!-- start container -->
-    <div class="container">
+    <div class="container-fluid">
         <!-- start same height -->
         <div class="same-height-row">
             <!-- col-sm-4 start -->
@@ -121,13 +121,13 @@ include('includes/header.php'); ?>
 <div class="container" id="content">
     <div class="row">
         <!-- product start -->
-        <?php 
-        
-        getpro();?>
-        
+        <?php
+
+        getpro(); ?>
+
         <!-- product close -->
     </div>
-        
+
 </div>
 
 <!-- footer start-->
