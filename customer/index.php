@@ -1,3 +1,3 @@
 <script>
-    window.open('my_account.php', '_self');
+    window.open('my_account', '_self');
 </script>

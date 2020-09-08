@@ -1,7 +1,7 @@
 <div class="box">
     <center>
         <h1>Pay Offline Using below Methode</h1>
-        <p>If you have any question please feel free to <a href="../contect.php">contect us</a> ,our Customer Service Center is working for 24/7.</p>
+        <p>If you have any question please feel free to <a href="../contect">contect us</a> ,our Customer Service Center is working for 24/7.</p>
     </center>
     <hr>
     <div class="table-responsive">

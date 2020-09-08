@@ -3,7 +3,7 @@
 define('TITLE', 'checkout');
 include('includes/header.php');
 if (!isset($_SESSION['customer_phone'])) {
-    echo "<script>window.open('login.php?check','_self');</script>";
+    echo "<script>window.open('login?check','_self');</script>";
 }
 ?>
 
@@ -15,7 +15,7 @@ if (!isset($_SESSION['customer_phone'])) {
         <div class="col-md-12">
             <!-- breadcoumb start -->
             <ul class="breadcrumb">
-                <li><a href="index.php">Home</a></li>
+                <li><a href="./ ">Home</a></li>
                 <li>Checkout</li>
             </ul>
             <!-- breadcoumb close -->
@@ -39,7 +39,7 @@ if (!isset($_SESSION['customer_phone'])) {
                 ?>
                 <center>
                     <p class="lead">
-                        <a href="order.php?c_id=<?php echo $cust_id;?>">
+                        <a href="order?c_id=<?php echo $cust_id;?>">
                             <h3>Pay offline <i class="fa fa-ofline"></i></h3>
                         </a>
                         <a href="#">

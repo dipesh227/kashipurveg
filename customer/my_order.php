@@ -3,7 +3,7 @@
         <h1>
             My Order
         </h1>
-        <p>If you have any question please feel free to <a href="../contect.php">contect us</a> ,our Customer Service Center is working for 24/7.</p>
+        <p>If you have any question please feel free to <a href="../contect">contect us</a> ,our Customer Service Center is working for 24/7.</p>
     </center>
     <hr>
     <div class="table-responsive">
@@ -45,7 +45,7 @@
                         <td><?php echo $order_row[5]; ?></td>
                         <td><?php echo substr($order_row[6],0,11); ?></td>
                         <td><?php echo $order_stetus ; ?></td>
-                        <td><a href="confirm.php?order_id=<?php echo $order_row[0]; ?>" class="btn btn-primary btn-sm"> Confirm if Paid</a></td>
+                        <td><a href="confirm?order_id=<?php echo $order_row[0]; ?>" class="btn btn-primary btn-sm"> Confirm if Paid</a></td>
                     </tr>
                 <?php $i++;} ?>
             </tbody>

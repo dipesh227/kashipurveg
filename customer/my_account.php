@@ -2,7 +2,7 @@
 define('TITLE', 'myaccount');
 include('includes/header.php');
 if (!isset($_SESSION['customer_phone'])) {
-    echo "<script>window.open('../login.php?myacc','_self');</script>";
+    echo "<script>window.open('../login?myacc','_self');</script>";
 } ?>
 <div id="content">
     <!-- container start -->
@@ -11,7 +11,7 @@ if (!isset($_SESSION['customer_phone'])) {
         <div class="col-md-12">
             <!-- breadcoumb start -->
             <ul class="breadcrumb">
-                <li><a href="../index.php">Home</a></li>
+                <li><a href="../">Home</a></li>
                 <li>My Account</li>
             </ul>
             <!-- breadcoumb close -->
@@ -25,22 +25,22 @@ if (!isset($_SESSION['customer_phone'])) {
         <div class="col-md-9">
             <?php
             if (isset($_GET['my_order'])) {
-                include('my_order.php');
+                include('my_order');
             }
             if (isset($_GET['pay_ofline'])) {
-                include("pay_ofline.php");
+                include("pay_ofline");
             }
             if (isset($_GET['edit_act'])) {
-                include("edit_act.php");
+                include("edit_act");
             }
             if (isset($_GET['change_pass'])) {
-                include("change_pass.php");
+                include("change_pass");
             }
             if (isset($_GET['my_wishlist'])) {
-                include("wishlist.php");
+                include("wishlist");
             }
             if (isset($_GET['del_acount'])) {
-                include("del_acount.php");
+                include("del_acount");
             }
             ?>
         </div>

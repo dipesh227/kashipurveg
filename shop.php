@@ -9,7 +9,7 @@ include('includes/header.php'); ?>
         <div class="col-md-12">
             <!-- breadcoumb start -->
             <ul class="breadcrumb">
-                <li><a href="index.php">Home</a></li>
+                <li><a href="./">Home</a></li>
                 <li>Shop</li>
             </ul>
             <!-- breadcoumb close -->

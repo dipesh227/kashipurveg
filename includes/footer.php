@@ -5,16 +5,16 @@
             <div class="col-md-3 col-sm-6">
                 <h4>Pages</h4>
                 <ul class="list-unstyled">
-                    <li><a href="cart.php">Sopping Cart</a></li>
-                    <li><a href="contect.php">Contect Us</a></li>
-                    <li><a href="shop.php">Shop</a></li>
-                    <li><a href="customer/my_account.php">My Account</a></li>
+                    <li><a href="cart">Sopping Cart</a></li>
+                    <li><a href="contect">Contect Us</a></li>
+                    <li><a href="shop">Shop</a></li>
+                    <li><a href="customer/my_account">My Account</a></li>
                 </ul>
                 <hr>
                 <h4>User Section</h4>
                 <ul class="list-unstyled">
-                    <li><a href="login.php">Login</a></li>
-                    <li><a href="customer_registration.php">Ragister</a></li>
+                    <li><a href="login">Login</a></li>
+                    <li><a href="customer_registration">Ragister</a></li>
                 </ul>
                 <hr class="hidden-md hidden-lg hidden-sm">
             </div>
@@ -29,7 +29,7 @@
                     while ($row_p_cat=mysqli_fetch_array($run_p_cat)) {
                         $p_cat_id=$row_p_cat[0];
                         $p_cat_title=$row_p_cat[1];
-                        echo "<li><a href='shop.php?p_cat=$p_cat_id'>$p_cat_title</a></li>";
+                        echo "<li><a href='shop?p_cat=$p_cat_id'>$p_cat_title</a></li>";
                     }
                     ?>
                 </ul>
@@ -47,7 +47,7 @@
                     <br>kashipurveadda@gmail.com
                     <br>+91 8630484930
                 </p>
-                <a href="contect.php">Goto Contect Us Page</a>
+                <a href="contect">Goto Contect Us Page</a>
                 <hr class="hidden-md hidden-lg">
             </div>
             <!-- end col-md-3 -->

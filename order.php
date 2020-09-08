@@ -27,7 +27,7 @@ while ($row_cart = mysqli_fetch_array($run_cart)) {
         $run_del=mysqli_query($con, $delete_cart);
         echo "
         <script>
-        window.open('customer/my_account.php?my_order','_self');
+        window.open('customer/my_account?my_order','_self');
         alert('Your order has been submiited, Thanks');
         </script>
         ";

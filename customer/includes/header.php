@@ -45,14 +45,14 @@ include('../function/function.php');
                 <!-- col-md-6 start right-->
                 <div class="col-md-6 ">
                     <ul class="menu">
-                        <li><a href="../customer_registration.php">Register</a></li>
+                        <li><a href="../customer_registration">Register</a></li>
                         <li><a href="my_account">My account</a></li>
-                        <li><a href="../cart.php">Goto Cart</a></li>
+                        <li><a href="../cart">Goto Cart</a></li>
                         <li><?php
                             if (!isset($_SESSION['customer_phone'])) {
-                                echo '<a href="checkout.php">Login</a>';
+                                echo '<a href="checkout">Login</a>';
                             } else {
-                                echo "<a href='logout.php'>Logout</a>";
+                                echo "<a href='logout'>Logout</a>";
                             }
                             ?></li>
                     </ul>
@@ -69,7 +69,7 @@ include('../function/function.php');
         <div class="container">
             <!-- navbar logo start -->
             <div class="navbar-header">
-                <a href="../index.php" class="navbar-brand home">
+                <a href="../" class="navbar-brand home">
                     <img src="../img/logo.png" alt="KashipurVegStore" class="hidden-xs" />
                     <img src="../img/logo.png" alt="KashipurVegStore" class="visible-xs" />
                 </a>
@@ -91,37 +91,37 @@ include('../function/function.php');
                         <li class="<?php if (TITLE == 'home') {
                                         echo 'active';
                                     } ?>">
-                            <a href="../index.php" class="">Home</a>
+                            <a href="../" class="">Home</a>
                         </li>
                         <li class="">
-                            <a href="../shop.php" class="">Shop</a>
+                            <a href="../shop" class="">Shop</a>
                         </li>
                         <li class="<?php if (TITLE == 'myaccount') {
                                         echo 'active';
                                     } ?>">
-                            <a href="my_account.php" class="">My Account</a>
+                            <a href="my_account" class="">My Account</a>
                         </li>
                         <li class="<?php if (TITLE == 'shopcart') {
                                         echo 'active';
                                     } ?>">
-                            <a href="../cart.php" class="">Shopping Cart</a>
+                            <a href="../cart" class="">Shopping Cart</a>
                         </li>
                         <li class="">
-                            <a href="../about.php" class="">About Us</a>
+                            <a href="../about" class="">About Us</a>
                         </li>
                         <li class="">
-                            <a href="../sevices.php" class="">Sevices</a>
+                            <a href="../sevices" class="">Sevices</a>
                         </li>
                         <li class="<?php if (TITLE == 'contectus') {
                                         echo 'active';
                                     } ?>">
-                            <a href="../contect.php" class="">Contect Us</a>
+                            <a href="../contect" class="">Contect Us</a>
                         </li>
                     </ul>
                 </div>
                 <!-- padding nav end -->
                 <!-- cart start -->
-                <a href="../cart.php" class="btn btn-primary navbar-btn right">
+                <a href="../cart" class="btn btn-primary navbar-btn right">
                     <i class="fa fa-shopping-cart"></i>
                     <span><?php item(); ?> items In Cart</span>
                 </a>
@@ -135,7 +135,7 @@ include('../function/function.php');
                 </div>
                 <!-- search end -->
                 <div class="collapse clearfix" id="search">
-                    <form action="../result.php" method="get" class="navbar-form">
+                    <form action="../result" method="get" class="navbar-form">
                         <div class="input-group">
                             <input type="text" name="user_query" placeholder="Search" class="form-control" required>
                             <span class="input-group-btn">

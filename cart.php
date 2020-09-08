@@ -10,7 +10,7 @@ echo @update_cart();?>
         <div class="col-md-12">
             <!-- breadcoumb start -->
             <ul class="breadcrumb">
-                <li><a href="index.php">Home</a></li>
+                <li><a href="./">Home</a></li>
                 <li>Cart</li>
             </ul>
             <!-- breadcoumb close -->
@@ -19,7 +19,7 @@ echo @update_cart();?>
         <!-- col-md-9 mianpart cart start -->
         <div class="col-md-9" id="cart">
             <div class="box">
-                <form action="cart.php" method="post" enctype="multipart/form-data">
+                <form action="cart" method="post" enctype="multipart/form-data">
                     <h1>Sopping Cart</h1>
                     <?php
                     $ip_add = get_user_id();
@@ -83,11 +83,11 @@ echo @update_cart();?>
                     <!-- sopping cart table end -->
                     <div class="box-footer">
                         <div class="pull-left">
-                            <a href="index.php" class="btn btn-default"><i class="fa fa-chevron-left"></i> Countinue Shopping</a>
+                            <a href="./" class="btn btn-default"><i class="fa fa-chevron-left"></i> Countinue Shopping</a>
                         </div>
                         <div class="pull-right">
                             <button type="submit" name="update" value="update" class="btn btn-default"><i class="fa fa-refresh"></i> Update Cart</button>
-                            <a href="checkout.php" class="btn btn-primary">
+                            <a href="checkout" class="btn btn-primary">
                                 Proceed TO Checkout <i class="fa fa-chevron-right"></i>
                             </a>
                         </div>
@@ -104,7 +104,7 @@ echo @update_cart();?>
                         $run_pro_del = mysqli_query($con, $delete_product);
                         if ($run_pro_del) {
                             echo "
-                            <script>window.open('cart.php','_self');</script>
+                            <script>window.open('cart','_self');</script>
                             ";
                         }
                     }

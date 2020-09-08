@@ -8,7 +8,7 @@ include('includes/header.php'); ?>
         <div class="col-md-12">
             <!-- breadcoumb start -->
             <ul class="breadcrumb">
-                <li><a href="index.php">Home</a></li>
+                <li><a href="./">Home</a></li>
                 <li>Contect Us</li>
             </ul>
             <!-- breadcoumb close -->
@@ -33,7 +33,7 @@ include('includes/header.php'); ?>
                     </center>
                 </div>
                 <!-- header close -->
-                <form action="contect.php" method="post">
+                <form action="contect" method="post">
                     <div class="form-group">
                         <label for="">Name</label>
                         <input type="text" name="name" id="name" class="form-control" placeholder="Name" required>

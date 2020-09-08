@@ -1,4 +1,5 @@
 <?php
+$db=mysqli_connect("localhost","root","","kashipurvegadda");
 $db = mysqli_connect("bymn12ac9v3dy9rblgoi-mysql.services.clever-cloud.com", "uwb5jr3dsdzm2ole", "mnVyapBrcKy3wH767Lp7", "bymn12ac9v3dy9rblgoi");
 // for user ip
 function get_user_id()
@@ -28,15 +29,15 @@ function add_to_cart()
         $run_chech = mysqli_query($db, $check_pre_add);
         if (mysqli_num_rows($run_chech) > 0) {
             echo "<script>alert('this prodect allredy  in cart')</script>";
-            echo "<script>window.open('detials.php?pro_id=$p_id','_self');</script>";
+            echo "<script>window.open('detials?pro_id=$p_id','_self');</script>";
         } else {
             $query = "INSERT INTO `cart`(`p_id`, `ip_add`, `qty`, `size`) VALUES ('$p_id','$ip_add','$p_qyt','$p_size')";
             $run_query = mysqli_query($db, $query);
             if ($run_query) {
-                echo "<script>window.open('detials.php?pro_id=$p_id','_self');</script>";
+                echo "<script>window.open('detials?pro_id=$p_id','_self');</script>";
             } else {
                 echo "<script>alert('this prodect not add to cart')</script>";
-                echo "<script>window.open('detials.php?pro_id=$p_id','_self');</script>";
+                echo "<script>window.open('detials?pro_id=$p_id','_self');</script>";
             }
         }
     }
@@ -86,17 +87,17 @@ function getpro()
         echo "
         <div class='col-sm-4 col-sm-6 single'>
             <div class='product'>
-                <a href='detials.php?pro_id=$pro_id'>
+                <a href='detials?pro_id=$pro_id'>
                     <img src='admin_area/prouduct_img/$pro_img1' class='img-responsive'>
                 </a>
                 <div class='text'>
                     <h3>
-                        <a href='detials.php?pro_id=$pro_id'>$pro_title</a>
+                        <a href='detials?pro_id=$pro_id'>$pro_title</a>
                     </h3>
                     <p class='price'>INR $pro_price /KG</p>
                     <p class='button'>
-                        <a href='detials.php?pro_id=$pro_id' class='btn btn-default'>View Detials</a>
-                        <a href='detials.php?pro_id=$pro_id' class='btn btn-primary'><i class='fa fa-shopping-cart'></i> Add to cart</a>
+                        <a href='detials?pro_id=$pro_id' class='btn btn-default'>View Detials</a>
+                        <a href='detials?pro_id=$pro_id' class='btn btn-primary'><i class='fa fa-shopping-cart'></i> Add to cart</a>
                     </p>
                 </div>
             </div>
@@ -113,7 +114,7 @@ function getpcats()
         $p_cat_id = $row_p_cat[0];
         $p_cat_tile = $row_p_cat[1];
         echo "
-        <li><a href='shop.php?p_cat=$p_cat_id'>$p_cat_tile</a></li>
+        <li><a href='shop?p_cat=$p_cat_id'>$p_cat_tile</a></li>
         ";
     }
 }
@@ -126,7 +127,7 @@ function getcat()
         $cat_id = $row_cat[0];
         $cat_tile = $row_cat[1];
         echo "
-        <li><a href='shop.php?cat_id=$cat_id'>$cat_tile</a></li>
+        <li><a href='shop?cat_id=$cat_id'>$cat_tile</a></li>
         ";
     }
 }
@@ -167,17 +168,17 @@ function getpcatprodispay()
             echo '
             <div class="col-md-4 col-sm-6 center-responsive ">
                 <div class="product">
-                    <a href="detials.php?pro_id=' . $pro_id . '">
+                    <a href="detials?pro_id=' . $pro_id . '">
                         <img src="admin_area/prouduct_img/' . $pro_img1 . '" class="img-responsive" >
                     </a>
                     <div class="text">
                         <h3>
-                            <a href="detials.php">' . $pro_title . '</a>
+                            <a href="detials">' . $pro_title . '</a>
                         </h3>
                         <p class="price">INR ' . $pro_price . ' /KG</p>
                         <p class="button">
-                            <a href="detials.php?pro_id=' . $pro_id . '" class="btn btn-default">View Detials</a>
-                            <a href="detials.php?pro_id=' . $pro_id . '" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                            <a href="detials?pro_id=' . $pro_id . '" class="btn btn-default">View Detials</a>
+                            <a href="detials?pro_id=' . $pro_id . '" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                         </p>
                     </div>
                 </div>
@@ -224,39 +225,23 @@ function getcatdispay()
             echo '
             <div class="col-md-4 col-sm-6 center-responsive ">
                 <div class="product">
-                    <a href="detials.php?pro_id=' . $pro_id . '">
+                    <a href="detials?pro_id=' . $pro_id . '">
                         <img src="admin_area/prouduct_img/' . $pro_img1 . '" class="img-responsive" >
                     </a>
                     <div class="text">
                         <h3>
-                            <a href="detials.php">' . $pro_title . '</a>
+                            <a href="detials">' . $pro_title . '</a>
                         </h3>
                         <p class="price">INR ' . $pro_price . ' /KG</p>
                         <p class="button">
-                            <a href="detials.php?pro_id=' . $pro_id . '" class="btn btn-default">View Detials</a>
-                            <a href="detials.php?pro_id=' . $pro_id . '" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                            <a href="detials?pro_id=' . $pro_id . '" class="btn btn-default">View Detials</a>
+                            <a href="detials?pro_id=' . $pro_id . '" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                         </p>
                     </div>
                 </div>
             </div>
             ';
         }
-        // echo '<!-- row end -->
-        // <center>
-        //     <ul class="pagination">';
-        // $query = "SELECT * FROM `products`";
-        // $result = mysqli_query($db, $query);
-        // $total_record = mysqli_num_rows($result);
-        // $total_page = ceil($total_record / $per_page);
-        // echo '
-        //         <li><a href="shop.php?page=1">First Page</a></li>';
-        // for ($i = 1; $i < $total_page; $i++) {
-        //     echo '
-        //         <li><a href="shop.php?page=' . $i . '">' . $i . '</a></li>';
-        // }
-        // echo '      <li><a href="shop.php?page=' . $total_page . '">Last Page</a></li>
-        //     </ul>
-        // </center>';
     }
 }
 
@@ -294,17 +279,17 @@ function direct_shop()
         <!-- start product -->
         <div class="col-md-4 col-sm-6 center-responsive ">
             <div class="product">
-                <a href="detials.php?pro_id=' . $pro_id . '">
+                <a href="detials?pro_id=' . $pro_id . '">
                     <img src="admin_area/prouduct_img/' . $pro_img1 . '" class="img-responsive">
                 </a>
                 <div class="text">
                     <h3>
-                        <a href="detials.php">' . $pro_title . '</a>
+                        <a href="detials">' . $pro_title . '</a>
                     </h3>
                     <p class="price">INR ' . $pro_price . ' /KG</p>
                     <p class="button">
-                        <a href="detials.php?pro_id=' . $pro_id . '" class="btn btn-default">View Detials</a>
-                        <a href="detials.php?pro_id=' . $pro_id . '" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                        <a href="detials?pro_id=' . $pro_id . '" class="btn btn-default">View Detials</a>
+                        <a href="detials?pro_id=' . $pro_id . '" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                     </p>
                 </div>
             </div>
@@ -321,12 +306,12 @@ function direct_shop()
     $total_record = mysqli_num_rows($result);
     $total_page = ceil($total_record / $per_page);
     echo '
-                <li><a href="shop.php?page=1">First Page</a></li>';
+                <li><a href="shop?page=1">First Page</a></li>';
     for ($i = 1; $i < $total_page; $i++) {
         echo '
-                <li><a href="shop.php?page=' . $i . '">' . $i . '</a></li>';
+                <li><a href="shop?page=' . $i . '">' . $i . '</a></li>';
     }
-    echo '      <li><a href="shop.php?page=' . $total_page . '">Last Page</a></li>
+    echo '      <li><a href="shop?page=' . $total_page . '">Last Page</a></li>
             </ul>
         </center>';
 }
@@ -345,17 +330,17 @@ function getreletivepro()
         echo "
         <div class='col-sm-4 col-sm-6 single'>
             <div class='product'>
-                <a href='detials.php?pro_id=$pro_id'>
+                <a href='detials?pro_id=$pro_id'>
                     <img src='admin_area/prouduct_img/$pro_img1' class='img-responsive'>
                 </a>
                 <div class='text'>
                     <h3>
-                        <a href='detials.php?pro_id=$pro_id'>$pro_title</a>
+                        <a href='detials?pro_id=$pro_id'>$pro_title</a>
                     </h3>
                     <p class='price'>INR $pro_price /KG</p>
                     <p class='button'>
-                        <a href='detials.php?pro_id=$pro_id' class='btn btn-default'>View Detials</a>
-                        <a href='detials.php?pro_id=$pro_id' class='btn btn-primary'><i class='fa fa-shopping-cart'></i> Add to cart</a>
+                        <a href='detials?pro_id=$pro_id' class='btn btn-default'>View Detials</a>
+                        <a href='detials?pro_id=$pro_id' class='btn btn-primary'><i class='fa fa-shopping-cart'></i> Add to cart</a>
                     </p>
                 </div>
             </div>

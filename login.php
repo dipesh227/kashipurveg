@@ -2,7 +2,7 @@
 define('TITLE', 'login');
 include('includes/header.php');
 if (isset($_SESSION['customer_phone'])) {
-    echo "<script>window.open('customer/my_account.php','_self');</script>";
+    echo "<script>window.open('customer/my_account','_self');</script>";
 }
 ?>
 
@@ -14,7 +14,7 @@ if (isset($_SESSION['customer_phone'])) {
         <div class="col-md-12">
             <!-- breadcoumb start -->
             <ul class="breadcrumb">
-                <li><a href="index.php">Home</a></li>
+                <li><a href="./">Home</a></li>
                 <li>Login</li>
             </ul>
             <!-- breadcoumb close -->
@@ -36,7 +36,7 @@ if (isset($_SESSION['customer_phone'])) {
                 <?php
                 if (isset($_GET['check'])) {
                     echo '
-                <form action="login.php?check" method="post">
+                <form action="login?check" method="post">
                     <div class="form-group">
                         <label for=""> Customer Phone</label>
                         <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone">
@@ -54,7 +54,7 @@ if (isset($_SESSION['customer_phone'])) {
                 } else {
                     if (isset($_GET['myacc'])) {
                         echo '
-                <form action="login.php?myacc" method="post">
+                <form action="login?myacc" method="post">
                     <div class="form-group">
                         <label for=""> Customer Phone</label>
                         <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone">
@@ -71,7 +71,7 @@ if (isset($_SESSION['customer_phone'])) {
                 </form>';
                     } else {
                         echo '
-                <form action="login.php" method="post">
+                <form action="login" method="post">
                     <div class="form-group">
                         <label for=""> Customer Phone</label>
                         <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone">
@@ -90,7 +90,7 @@ if (isset($_SESSION['customer_phone'])) {
                 }
                 ?>
                 <center>
-                    <a href="customer_registration.php">
+                    <a href="customer_registration">
                         <h3>New ? Register Here</h3>
                     </a>
                 </center>
@@ -117,16 +117,16 @@ if (isset($_POST['submit'])) {
             $run_cart = mysqli_query($con, $select_cart);
             if (mysqli_num_rows($run_cart) > 0) {
                 if (isset($_GET['check'])) {
-                    echo "<script>window.open('checkout.php','_self');</script>";
+                    echo "<script>window.open('checkout','_self');</script>";
                 }
                 if (isset($_GET['myacc'])) {
-                    echo "<script>window.open('customer/my_account.php','_self');</script>";
+                    echo "<script>window.open('customer/my_account','_self');</script>";
                 }
             } else {
                 if (isset($_GET['myacc'])) {
-                    echo "<script>window.open('customer/my_account.php','_self');</script>";
+                    echo "<script>window.open('customer/my_account','_self');</script>";
                 } else {
-                    echo "<script>window.open('index.php','_self');</script>";
+                    echo "<script>window.open('./','_self');</script>";
                 }
             }
         }

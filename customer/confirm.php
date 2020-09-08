@@ -20,7 +20,7 @@ if (isset($_POST['confirm_pament'])) {
     $update_p = "UPDATE `panding_order` SET `order_states`='$complete' WHERE `order_id`='$update_id'";
     $run_p_update = mysqli_query($con, $update_p);
     echo "<script>alert('Your peyment is recived');</script>";
-    echo "<script>window.open('./my_account.php?my_order','_self');</script>";
+    echo "<script>window.open('./my_account?my_order','_self');</script>";
 }
 ?>
 <div id="content">
@@ -30,7 +30,7 @@ if (isset($_POST['confirm_pament'])) {
         <div class="col-md-12">
             <!-- breadcoumb start -->
             <ul class="breadcrumb">
-                <li><a href="../index.php">Home</a></li>
+                <li><a href="../">Home</a></li>
                 <li>My Account</li>
             </ul>
             <!-- breadcoumb close -->
@@ -44,7 +44,7 @@ if (isset($_POST['confirm_pament'])) {
         <div class="col-md-9">
             <div class="box">
                 <h1 class="text-center">Please Confirm Your Payment</h1>
-                <form action="confirm.php?update_id=<?php echo $order_id; ?>" method="post">
+                <form action="confirm?update_id=<?php echo $order_id; ?>" method="post">
                     <?php
                     $get_order = "SELECT * FROM `customer_order` WHERE `order_id`='$_GET[order_id]'";
                     $run_order = mysqli_query($con, $get_order);

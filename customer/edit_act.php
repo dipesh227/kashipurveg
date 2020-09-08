@@ -19,7 +19,7 @@ if (isset($_POST['update'])) {
     $update_customer = "UPDATE `customers` SET `customer_name`='$c_name',`customer_email`='$c_email',`customer_sate`='$c_state',`customer_city`='$c_city',`customer_address`='$c_address',`customer_img`='$customer_image' WHERE `customer_contect`='$c_Number'";
     $run_cust = mysqli_query($con, $update_customer);
     move_uploaded_file($image_tmp_name, "customer_images/$image_name");
-    echo "<script>window.open('./my_account.php','_self');</script>";
+    echo "<script>window.open('./my_account','_self');</script>";
 }
 ?>
 <div class="box">

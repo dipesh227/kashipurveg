@@ -8,7 +8,7 @@ include('includes/header.php'); ?>
         <div class="col-md-12">
             <!-- breadcoumb start -->
             <ul class="breadcrumb">
-                <li><a href="index.php">Home</a></li>
+                <li><a href="./">Home</a></li>
                 <li>Registeration</li>
             </ul>
             <!-- breadcoumb close -->
@@ -30,7 +30,7 @@ include('includes/header.php'); ?>
                     </center>
                 </div>
                 <!-- header close -->
-                <form action="customer_registration.php" enctype="multipart/form-data" method="post">
+                <form action="customer_registration" enctype="multipart/form-data" method="post">
                     <div class="form-group">
                         <label for=""> Customer Name</label>
                         <input type="text" name="c_name" id="name" class="form-control" placeholder="Name" required>
@@ -67,7 +67,6 @@ include('includes/header.php'); ?>
                         <label for="">Image</label>
                         <input type="file" name="c_image" id="image" class="form-control" placeholder="Image" required>
                     </div>
-
                     <div class="text-center">
                         <button type="submit" name="submit" class="btn btn-primary">
                             <i class="fa fa-user-md"></i> Register
@@ -106,13 +105,13 @@ if (isset($_POST['submit'])) {
             $_SESSION['customer_phone']=$contect_numbe;
             $_SESSION['customer_name']=$name;
             echo"<script>alert('You Have Been Registerd Successfully');
-            window.open('checkout.php','_self');
+            window.open('checkout','_self');
             </script>";
         }else {
             $_SESSION['customer_phone']=$contect_numbe;
             $_SESSION['customer_name']=$name;
             echo"<script>alert('You Have Been Registerd Successfully');
-            window.open('index.php','_self');
+            window.open('./','_self');
             </script>";
         }
     }
