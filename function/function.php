@@ -1,5 +1,5 @@
 <?php
-$db = mysqli_connect("localhost", "root", "", "kashipurvegadda");
+$db = mysqli_connect("bymn12ac9v3dy9rblgoi-mysql.services.clever-cloud.com", "uwb5jr3dsdzm2ole", "mnVyapBrcKy3wH767Lp7", "bymn12ac9v3dy9rblgoi");
 // for user ip
 function get_user_id()
 {
@@ -65,9 +65,9 @@ function total_price()
         $pro_qty = $record[2];
         $run_price = "SELECT * FROM `products` WHERE `product_id`='$pro_id'";
         $run_select_price = mysqli_query($db, $run_price);
-        while ($record_price= mysqli_fetch_array($run_select_price)) {
-            $sub_total = $record_price[8]*$pro_qty;
-            $total+=$sub_total;
+        while ($record_price = mysqli_fetch_array($run_select_price)) {
+            $sub_total = $record_price[8] * $pro_qty;
+            $total += $sub_total;
         }
     }
     echo $total;
