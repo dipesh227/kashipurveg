@@ -52,7 +52,7 @@ include('function/function.php');
                             if (!isset($_SESSION['customer_phone'])) {
                                 echo '<a href="checkout.php">Login</a>';
                             } else {
-                                echo "<a href='Logout.php'>Logout</a>";
+                                echo "<a href='logout.php'>Logout</a>";
                             }
                             ?>
                         </li>
