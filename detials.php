@@ -127,7 +127,7 @@ if (isset($_GET['pro_id'])) {
                             <!-- form qty end -->
                             <p class="price">INR <?php echo $p_price ?></p>
                             <p class="text-center button">
-                                <button class="btn btn-primary" type="submit" name="add_cart"><i class="fa fa-shopping-cart"></i>Add To Cart</button>
+                                <button class="btn btn-primary" type="submit" name="add_cart"><i class="fa fa-shopping-cart"></i> Add To Cart</button>
                             </p>
                         </form>
                         <!-- form end -->

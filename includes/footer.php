@@ -27,7 +27,6 @@
                     ';
                 }
                 ?>
-
                 <hr class="hidden-md hidden-lg hidden-sm">
             </div>
             <!-- end col-md-3 -->

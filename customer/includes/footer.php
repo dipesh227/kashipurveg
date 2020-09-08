@@ -1,5 +1,5 @@
 <div id="footer">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <!-- start col-md-3 -->
             <div class="col-md-3 col-sm-6">
@@ -11,11 +11,21 @@
                     <li><a href="my_account">My Account</a></li>
                 </ul>
                 <hr>
-                <h4>User Section</h4>
+                <?php
+                if (!isset($_SESSION['customer_phone'])) {
+                    echo '
                 <ul class="list-unstyled">
                     <li><a href="../login">Login</a></li>
                     <li><a href="../customer_registration">Ragister</a></li>
-                </ul>
+                </ul>';
+                } else {
+                    echo '
+                    <ul class="list-unstyled">
+                    <li><a href="../logout">Logout</a></li>
+                    </ul>
+                    ';
+                }
+                ?>
                 <hr class="hidden-md hidden-lg hidden-sm">
             </div>
             <!-- end col-md-3 -->
@@ -23,12 +33,12 @@
             <div class="col-md-3 colsm-6">
                 <h4>Top Products Categories</h4>
                 <ul class="list-unstyled">
-                <?php
-                    $get_p_cat="SELECT * FROM `product_categories` ";
-                    $run_p_cat=mysqli_query($con,$get_p_cat);
-                    while ($row_p_cat=mysqli_fetch_array($run_p_cat)) {
-                        $p_cat_id=$row_p_cat[0];
-                        $p_cat_title=$row_p_cat[1];
+                    <?php
+                    $get_p_cat = "SELECT * FROM `product_categories` ";
+                    $run_p_cat = mysqli_query($con, $get_p_cat);
+                    while ($row_p_cat = mysqli_fetch_array($run_p_cat)) {
+                        $p_cat_id = $row_p_cat[0];
+                        $p_cat_title = $row_p_cat[1];
                         echo "<li><a href='../shop?p_cat=$p_cat_id'>$p_cat_title</a></li>";
                     }
                     ?>

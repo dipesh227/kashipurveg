@@ -6,7 +6,7 @@ if (!isset($_SESSION['customer_phone'])) {
 } ?>
 <div id="content">
     <!-- container start -->
-    <div class="container">
+    <div class="container-fluid">
         <!-- col-md-12 start -->
         <div class="col-md-12">
             <!-- breadcoumb start -->
@@ -25,22 +25,22 @@ if (!isset($_SESSION['customer_phone'])) {
         <div class="col-md-9">
             <?php
             if (isset($_GET['my_order'])) {
-                include('my_order');
+                include('my_order.php');
             }
             if (isset($_GET['pay_ofline'])) {
-                include("pay_ofline");
+                include("pay_ofline.php");
             }
             if (isset($_GET['edit_act'])) {
-                include("edit_act");
+                include("edit_act.php");
             }
             if (isset($_GET['change_pass'])) {
-                include("change_pass");
+                include("change_pass.php");
             }
             if (isset($_GET['my_wishlist'])) {
-                include("wishlist");
+                include("wishlist.php");
             }
             if (isset($_GET['del_acount'])) {
-                include("del_acount");
+                include("del_acount.php");
             }
             ?>
         </div>

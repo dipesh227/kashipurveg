@@ -1,5 +1,5 @@
 <?php
-$db=mysqli_connect("localhost","root","","kashipurvegadda");
+$db = mysqli_connect("localhost", "root", "", "kashipurvegadda");
 // $db = mysqli_connect("bymn12ac9v3dy9rblgoi-mysql.services.clever-cloud.com", "uwb5jr3dsdzm2ole", "mnVyapBrcKy3wH767Lp7", "bymn12ac9v3dy9rblgoi");
 // for user ip
 function get_user_id()
@@ -23,18 +23,18 @@ function add_to_cart()
     if (isset($_GET['add_cart'])) {
         $ip_add = get_user_id();
         $p_id = $_GET['add_cart'];
-        $p_qyt = $_POST['product_qty'];
-        $p_size = $_POST['product_size'];
         $check_pre_add = "SELECT * FROM `cart` WHERE ip_add='$ip_add' AND p_id='$p_id'";
         $run_chech = mysqli_query($db, $check_pre_add);
         if (mysqli_num_rows($run_chech) > 0) {
             echo "<script>alert('this prodect allredy  in cart')</script>";
-            echo "<script>window.open('detials?pro_id=$p_id','_self');</script>";
+            echo "<script>window.open('cart','_self');</script>";
         } else {
+            $p_qyt = $_POST['product_qty'];
+            $p_size = $_POST['product_size'];
             $query = "INSERT INTO `cart`(`p_id`, `ip_add`, `qty`, `size`) VALUES ('$p_id','$ip_add','$p_qyt','$p_size')";
             $run_query = mysqli_query($db, $query);
             if ($run_query) {
-                echo "<script>window.open('detials?pro_id=$p_id','_self');</script>";
+                echo "<script>window.open('cart','_self');</script>";
             } else {
                 echo "<script>alert('this prodect not add to cart')</script>";
                 echo "<script>window.open('detials?pro_id=$p_id','_self');</script>";
@@ -287,10 +287,12 @@ function direct_shop()
                         <a href="detials">' . $pro_title . '</a>
                     </h3>
                     <p class="price">INR ' . $pro_price . ' /KG</p>
-                    <p class="button">
+                    <form action="detials?add_cart=' . $pro_id . '" method="post" >
+                    <p class="button ">
                         <a href="detials?pro_id=' . $pro_id . '" class="btn btn-default">View Detials</a>
-                        <a href="detials?pro_id=' . $pro_id . '" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                        <button  class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</button>
                     </p>
+                    </form>
                 </div>
             </div>
         </div>

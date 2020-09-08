@@ -25,12 +25,12 @@ include('../function/function.php');
     <!-- top bar Start -->
     <div id="top">
         <!-- container bar Start left-->
-        <div class="container ">
+        <div class="container-fluid ">
             <!--row start-->
             <div class="row">
                 <!-- col-md-6 start-->
                 <div class="col-md-6 offer">
-                    <a href="" class="btn btn-success btn-sm">
+                    <a href="my_account" class="btn btn-success btn-sm">
                         <?php
                         if (!isset($_SESSION['customer_phone'])) {
                             echo 'Welcome Gest';
@@ -39,22 +39,32 @@ include('../function/function.php');
                         }
                         ?>
                     </a>
-                    <a href="">Sopping Cart Total Price: INR <?php total_price(); ?>, Total Items <?php item(); ?></a>
+                    <a href="../cart">Sopping Cart Total Price: INR <?php total_price(); ?>, Total Items <?php item(); ?></a>
                 </div>
                 <!-- col-md-6 end left-->
                 <!-- col-md-6 start right-->
                 <div class="col-md-6 ">
                     <ul class="menu">
-                        <li><a href="../customer_registration">Register</a></li>
-                        <li><a href="my_account">My account</a></li>
+                        <?php
+                        if (!isset($_SESSION['customer_phone'])) {
+                            echo '
+                            <li>
+                            <a href="../customer_registration">Register</a>
+                            </li>
+                            ';
+                        }
+                        ?>
+                        <li><a href="my_account">My Account</a></li>
                         <li><a href="../cart">Goto Cart</a></li>
-                        <li><?php
+                        <li>
+                            <?php
                             if (!isset($_SESSION['customer_phone'])) {
-                                echo '<a href="checkout">Login</a>';
+                                echo '<a href="../checkout">Login</a>';
                             } else {
-                                echo "<a href='logout'>Logout</a>";
+                                echo "<a href='../logout'>Logout</a>";
                             }
-                            ?></li>
+                            ?>
+                        </li>
                     </ul>
                 </div>
                 <!-- col-md-6 end right-->
@@ -66,7 +76,7 @@ include('../function/function.php');
     <!-- top bar end -->
     <!-- nav bar start -->
     <div class="navbar navbar-default navbar-fixed" id="navbar">
-        <div class="container">
+        <div class="container-fluid">
             <!-- navbar logo start -->
             <div class="navbar-header">
                 <a href="../" class="navbar-brand home">
@@ -77,10 +87,22 @@ include('../function/function.php');
                     <span class="sr-only">Toggle Navigetion</span>
                     <i class="fa fa-align-justify"></i>
                 </button>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#search">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#searchmob">
                     <span class="sr-only"></span>
                     <i class="fa fa-search"></i>
                 </button>
+            </div>
+            <div class="collapse clearfix" id="searchmob">
+                <form action="../result" method="get" class="navbar-form">
+                    <div class="input-group">
+                        <input type="text" name="user_query" placeholder="Search" class="form-control" required>
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="submit" value="search" name="search">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </form>
             </div>
             <!-- navabr logo end -->
             <!-- navabr menu start -->
@@ -93,7 +115,9 @@ include('../function/function.php');
                                     } ?>">
                             <a href="../" class="">Home</a>
                         </li>
-                        <li class="">
+                        <li class="<?php if (TITLE == 'shop') {
+                                        echo 'active';
+                                    } ?>">
                             <a href="../shop" class="">Shop</a>
                         </li>
                         <li class="<?php if (TITLE == 'myaccount') {
@@ -106,10 +130,14 @@ include('../function/function.php');
                                     } ?>">
                             <a href="../cart" class="">Shopping Cart</a>
                         </li>
-                        <li class="">
+                        <li class="<?php if (TITLE == 'about') {
+                                        echo 'active';
+                                    } ?>">
                             <a href="../about" class="">About Us</a>
                         </li>
-                        <li class="">
+                        <li class="<?php if (TITLE == 'sevices') {
+                                        echo 'active';
+                                    } ?>">
                             <a href="../sevices" class="">Sevices</a>
                         </li>
                         <li class="<?php if (TITLE == 'contectus') {
@@ -128,7 +156,7 @@ include('../function/function.php');
                 <!-- cart end -->
                 <!-- search stat -->
                 <div class="navbar-collapse collapse-right">
-                    <button class="btn navbar-btn btn-primary" type="button" data-toggle="collapse" data-target="#search">
+                    <button style="margin-left: 10px;" class="btn navbar-btn btn-primary " type="button" data-toggle="collapse" data-target="#search">
                         <span class="sr-only">Toggle search</span>
                         <i class="fa fa-search"></i>
                     </button>
