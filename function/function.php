@@ -27,7 +27,7 @@ function add_to_cart()
         $run_chech = mysqli_query($db, $check_pre_add);
         if (mysqli_num_rows($run_chech) > 0) {
             echo "<script>alert('this prodect allredy  in cart')</script>";
-            echo "<script>window.open('cart','_self');</script>";
+            echo "<script>window.open('cart.php','_self');</script>";
         } else {
             if (!isset($_POST['product_qty']) && !isset($_POST['product_size'])) {
                 $p_qyt = $p_size = 1;
@@ -40,13 +40,13 @@ function add_to_cart()
             if ($run_query) {
                 if (!isset($_POST['product_qty']) && !isset($_POST['product_size'])) {
                     echo "<script>alert('prodect is add to cart')</script>";
-                    echo "<script>window.open('detials?pro_id=$p_id','_self');</script>";
+                    echo "<script>window.open('detials.php?pro_id=$p_id','_self');</script>";
                 } else {
-                    echo "<script>window.open('cart','_self');</script>";
+                    echo "<script>window.open('cart.php','_self');</script>";
                 }
             } else {
                 echo "<script>alert('this prodect not add to cart')</script>";
-                echo "<script>window.open('detials?pro_id=$p_id','_self');</script>";
+                echo "<script>window.open('detials.php?pro_id=$p_id','_self');</script>";
             }
         }
     }
