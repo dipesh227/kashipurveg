@@ -30,7 +30,7 @@ include('function/function.php');
             <div class="row">
                 <!-- col-md-6 start-->
                 <div class="col-md-6 offer">
-                    <a href="customer.php/my_account" class="btn btn-success btn-sm">
+                    <a href="customer/my_account.php" class="btn btn-success btn-sm">
                         <?php
                         if (!isset($_SESSION['customer_phone'])) {
                             echo 'Welcome Gest';
