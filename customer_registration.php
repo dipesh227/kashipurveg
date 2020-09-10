@@ -30,7 +30,7 @@ include('includes/header.php'); ?>
                     </center>
                 </div>
                 <!-- header close -->
-                <form action="customer_registration" enctype="multipart/form-data" method="post">
+                <form action="customer_registration.php" enctype="multipart/form-data" method="post">
                     <div class="form-group">
                         <label for=""> Customer Name</label>
                         <input type="text" name="c_name" id="name" class="form-control" placeholder="Name" required>
@@ -105,7 +105,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['customer_phone']=$contect_numbe;
             $_SESSION['customer_name']=$name;
             echo"<script>alert('You Have Been Registerd Successfully');
-            window.open('checkout','_self');
+            window.open('checkout.php','_self');
             </script>";
         }else {
             $_SESSION['customer_phone']=$contect_numbe;

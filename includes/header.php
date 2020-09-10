@@ -30,7 +30,7 @@ include('function/function.php');
             <div class="row">
                 <!-- col-md-6 start-->
                 <div class="col-md-6 offer">
-                    <a href="customer/my_account" class="btn btn-success btn-sm">
+                    <a href="customer.php/my_account" class="btn btn-success btn-sm">
                         <?php
                         if (!isset($_SESSION['customer_phone'])) {
                             echo 'Welcome Gest';
@@ -38,7 +38,7 @@ include('function/function.php');
                             echo "Welcome : " . $_SESSION['customer_name'] . "";
                         }
                         ?></a>
-                    <a href="cart">Sopping Cart Total Price: INR <?php total_price(); ?>, Total Items <?php item(); ?></a>
+                    <a href="cart.php">Sopping Cart Total Price: INR <?php total_price(); ?>, Total Items <?php item(); ?></a>
                 </div>
                 <!-- col-md-6 end left-->
                 <!-- col-md-6 start right-->
@@ -48,19 +48,19 @@ include('function/function.php');
                         if (!isset($_SESSION['customer_phone'])) {
                             echo '
                             <li>
-                            <a href="customer_registration">Register</a>
+                            <a href="customer_registration.php">Register</a>
                             </li>
                             ';
                         }
                         ?>
-                        <li><a href="customer/my_account">My Account</a></li>
-                        <li><a href="cart">Goto Cart</a></li>
+                        <li><a href="customer/my_account.php">My Account</a></li>
+                        <li><a href="cart.php">Goto Cart</a></li>
                         <li>
                             <?php
                             if (!isset($_SESSION['customer_phone'])) {
-                                echo '<a href="checkout">Login</a>';
+                                echo '<a href="checkout.php">Login</a>';
                             } else {
-                                echo "<a href='logout'>Logout</a>";
+                                echo "<a href='logout.php'>Logout</a>";
                             }
                             ?>
                         </li>
@@ -117,36 +117,36 @@ include('function/function.php');
                         <li class="<?php if (TITLE == 'shop') {
                                         echo 'active';
                                     } ?>">
-                            <a href="shop" class="">Shop</a>
+                            <a href="shop.php" class="">Shop</a>
                         </li>
                         <li class="">
-                            <a href="customer/my_account" class="">My Account</a>
+                            <a href="customer/my_account.php" class="">My Account</a>
                         </li>
                         <li class="<?php if (TITLE == 'shopcart') {
                                         echo 'active';
                                     } ?>">
-                            <a href="cart" class="">Shopping Cart</a>
+                            <a href="cart.php" class="">Shopping Cart</a>
                         </li>
                         <li class="<?php if (TITLE == 'about') {
                                         echo 'active';
                                     } ?>">
-                            <a href="about" class="">About Us</a>
+                            <a href="about.php" class="">About Us</a>
                         </li>
                         <li class="<?php if (TITLE == 'sevices') {
                                         echo 'active';
                                     } ?>">
-                            <a href="sevices" class="">Sevices</a>
+                            <a href="sevices.php" class="">Sevices</a>
                         </li>
                         <li class="<?php if (TITLE == 'contectus') {
                                         echo 'active';
                                     } ?>">
-                            <a href="contect" class="">Contect Us</a>
+                            <a href="contect.php" class="">Contect Us</a>
                         </li>
                     </ul>
                 </div>
                 <!-- padding nav end -->
                 <!-- cart start -->
-                <a href="cart" class="btn btn-primary navbar-btn right">
+                <a href="cart.php" class="btn btn-primary navbar-btn right">
                     <i class="fa fa-shopping-cart"></i>
                     <span><?php item(); ?> items In Cart</span>
                 </a>
@@ -160,7 +160,7 @@ include('function/function.php');
                 </div>
                 <!-- search end -->
                 <div class="collapse clearfix" id="search">
-                    <form action="result" method="get" class="navbar-form">
+                    <form action="result.php" method="get" class="navbar-form">
                         <div class="input-group">
                             <input type="text" name="user_query" placeholder="Search" class="form-control" required>
                             <span class="input-group-btn">

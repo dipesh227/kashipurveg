@@ -27,7 +27,7 @@ while ($row_cart = mysqli_fetch_array($run_cart)) {
 ?>
         <script>
             alert('Your order has been submiited, Thanks');
-            window.open('customer/my_account?my_order', '_self');
+            window.open('customer/my_account.php?my_order', '_self');
         </script>
 <?php
     }
@@ -35,7 +35,7 @@ while ($row_cart = mysqli_fetch_array($run_cart)) {
 if (!isset($pro_id)) {
     echo "
         <script>
-        window.open('customer/my_account?my_order','_self');
+        window.open('customer/my_account.php?my_order','_self');
         </script>
     ";
 }

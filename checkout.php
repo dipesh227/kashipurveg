@@ -39,7 +39,7 @@ if (!isset($_SESSION['customer_phone'])) {
                 ?>
                 <center>
                     <p class="lead">
-                        <a href="order?c_id=<?php echo $cust_id;?>">
+                        <a href="order.php?c_id=<?php echo $cust_id;?>">
                             <h3>Pay offline <i class="fa fa-ofline"></i></h3>
                         </a>
                         <a href="#">

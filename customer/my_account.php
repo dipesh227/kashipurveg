@@ -2,7 +2,7 @@
 define('TITLE', 'myaccount');
 include('includes/header.php');
 if (!isset($_SESSION['customer_phone'])) {
-    echo "<script>window.open('../login?myacc','_self');</script>";
+    echo "<script>window.open('../login.php?myacc','_self');</script>";
 } ?>
 <div id="content">
     <!-- container start -->

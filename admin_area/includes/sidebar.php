@@ -6,7 +6,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a href="?dashboard" class="navbar-brand">admin panel</a>
+        <a href="index.php?dashboard" class="navbar-brand">admin panel</a>
     </div>
     <ul class="nav navbar-right top-nav">
         <li class="dropdown">
@@ -15,23 +15,23 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                    <a href="?user_profile"><i class="fa fa-fw-user"></i> Profile</a>
+                    <a href="index.php?user_profile"><i class="fa fa-fw-user"></i> Profile</a>
                 </li>
                 <li>
-                    <a href="?view_prodect"><i class="fa fa-fw-envelope"></i> Products</a>
+                    <a href="index.php?view_prodect"><i class="fa fa-fw-envelope"></i> Products</a>
                 </li>
                 <li>
-                    <a href="?view_customer"><i class="fa fa-fw-user"></i> Customer</a>
+                    <a href="index.php?view_customer"><i class="fa fa-fw-user"></i> Customer</a>
                 </li>
                 <li>
-                    <a href="?pro_cat"><i class="fa fa-fw-gear"></i> Product Categories</a>
+                    <a href="index.php?pro_cat"><i class="fa fa-fw-gear"></i> Product Categories</a>
                 </li>
                 <li>
-                    <a href="?view_customer"><i class="fa fa-fw-user"></i> customer</a>
+                    <a href="index.php?view_customer"><i class="fa fa-fw-user"></i> customer</a>
                 </li>
                 <li class="divider"></li>
                 <li>
-                    <a href="logout">Logout i. </a>
+                    <a href="../logout.php">Logout i. </a>
                 </li>
             </ul>
         </li>

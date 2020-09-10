@@ -1,5 +1,5 @@
 <div class="box">
-    <form action="cart" method="post" enctype="multipart/form-data">
+    <form action="cart.php" method="post" enctype="multipart/form-data">
         <h1>Sopping Cart</h1>
         <?php
         $ip_add = get_user_id();
@@ -66,7 +66,7 @@
                 <a href="../" class="btn btn-default"><i class="fa fa-chevron-left"></i> Countinue Shopping</a>
             </div>
             <div class="pull-right">
-                <a href="../cart" class="btn btn-primary">
+                <a href="../cart.php" class="btn btn-primary">
                     Proceed TO Checkout <i class="fa fa-chevron-right"></i>
                 </a>
             </div>

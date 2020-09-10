@@ -29,8 +29,8 @@ if (isset($_GET['pro_id'])) {
             <!-- breadcoumb start -->
             <ul class="breadcrumb">
                 <li><a href="./">Home</a></li>
-                <li><a href="shop">Shop </a></li>
-                <li><a href="shop?p_cat=<?php echo $p_cat_id; ?>"><?php echo $p_cat_title; ?></a> </li>
+                <li><a href="shop.php">Shop </a></li>
+                <li><a href="shop.php?p_cat=<?php echo $p_cat_id; ?>"><?php echo $p_cat_title; ?></a> </li>
                 <li><?php echo $p_title; ?></li>
             </ul>
             <!-- breadcoumb close -->
@@ -96,7 +96,7 @@ if (isset($_GET['pro_id'])) {
                     <div class="box">
                         <h1 class="text-center"><?php echo $p_title ?></h1>
                         <!-- form start -->
-                        <form action="detials?add_cart=<?php echo $pro_id; ?>" method="post" class="form-horizontal">
+                        <form action="detials.php?add_cart=<?php echo $pro_id; ?>" method="post" class="form-horizontal">
                             <!-- form qty start -->
                             <div class="form-group">
                                 <label for="productquntity" class="col-md-5 control-label">Product Quantity</label>

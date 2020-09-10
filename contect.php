@@ -33,7 +33,7 @@ include('includes/header.php'); ?>
                     </center>
                 </div>
                 <!-- header close -->
-                <form action="contect" method="post">
+                <form action="contect.php" method="post">
                     <div class="form-group">
                         <label for="">Name</label>
                         <input type="text" name="name" id="name" class="form-control" placeholder="Name" required>
