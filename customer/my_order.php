@@ -7,7 +7,7 @@
     </center>
     <hr>
     <div class="table-responsive">
-        <table class="table table-bordered table-hover">
+        <table class="table table-bordered table-hover table-striped mydatatable">
             <thead>
                 <tr>
                     <th>Sr.No</th>
@@ -31,10 +31,10 @@
                 $run_order = mysqli_query($con, $get_order);
                 $i = 1;
                 while ($order_row = mysqli_fetch_array($run_order)) {
-                    if($order_row[7]=='panding'){
-                        $order_stetus='unpaid';
-                    }else{
-                        $order_stetus='paid';
+                    if ($order_row[7] == 'panding') {
+                        $order_stetus = 'unpaid';
+                    } else {
+                        $order_stetus = 'paid';
                     }
                 ?>
                     <tr>
@@ -43,12 +43,25 @@
                         <td><?php echo $order_row[3]; ?></td>
                         <td><?php echo $order_row[4]; ?></td>
                         <td><?php echo $order_row[5]; ?></td>
-                        <td><?php echo substr($order_row[6],0,11); ?></td>
-                        <td><?php echo $order_stetus ; ?></td>
+                        <td><?php echo substr($order_row[6], 0, 11); ?></td>
+                        <td><?php echo $order_stetus; ?></td>
                         <td><a href="confirm.php?order_id=<?php echo $order_row[0]; ?>" class="btn btn-primary btn-sm"> Confirm if Paid</a></td>
                     </tr>
-                <?php $i++;} ?>
+                <?php $i++;
+                } ?>
             </tbody>
+            <tfoot>
+                <tr>
+                    <th>Sr.No</th>
+                    <th>Due Amount</th>
+                    <th>Invoice Number</th>
+                    <th>Quantity</th>
+                    <th>Size</th>
+                    <th>Order Date</th>
+                    <th>Paid/Unpaid</th>
+                    <th>Status</th>
+                </tr>
+            </tfoot>
         </table>
     </div>
 </div>

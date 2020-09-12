@@ -56,11 +56,10 @@ body {
   padding: 0 5px;
   color: #f7f7f7;
 }
-#navbar{
+#navbar {
   position: sticky;
   top: 0;
-z-index: 32;
-
+  z-index: 32;
 }
 .navbar {
   background: white;
@@ -206,19 +205,19 @@ z-index: 32;
   margin-bottom: 10px;
 }
 /* breadcumb section */
-.breadcrumb{
+.breadcrumb {
   padding: 8px 15px;
   margin-bottom: 20px;
   background-color: #ffffff;
   border: 0;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.5);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
-.breadcrumb >li+li:before{
+.breadcrumb > li + li:before {
   content: ">\00a0";
   color: #cccccc;
 }
-@media(max-width:991px){
-  .breadcrumb{
+@media (max-width: 991px) {
+  .breadcrumb {
     padding: 8px 0;
     text-align: center;
   }
@@ -226,78 +225,76 @@ z-index: 32;
 
 /* prodect categury */
 
-#content .panel.sidebar-menu{
+#content .panel.sidebar-menu {
   box-sizing: border-box;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
 }
 
-#content .panel.sidebar-menu ul.nav.category-menu{
+#content .panel.sidebar-menu ul.nav.category-menu {
   margin-bottom: 20px;
 }
-#content .panel.sidebar-menu ul.nav.category-menu >li >a{
+#content .panel.sidebar-menu ul.nav.category-menu > li > a {
   text-transform: uppercase;
   font-weight: bold;
 }
-#content .panel.sidebar-menu h3{
-padding: 5px 0;
-margin: 0;
-text-transform: uppercase;
+#content .panel.sidebar-menu h3 {
+  padding: 5px 0;
+  margin: 0;
+  text-transform: uppercase;
 }
 /* shop product style */
-@media(max-width:767px){
-  .center-responsive{
+@media (max-width: 767px) {
+  .center-responsive {
     width: 100%;
     margin: 0 auto;
   }
 }
-@media(max-width:550px){
-  .center-responsive{
+@media (max-width: 550px) {
+  .center-responsive {
     width: 70%;
     margin: 0 auto;
+  }
 }
-}
-#mycarousel .carousel-inner .item img{
+#mycarousel .carousel-inner .item img {
   height: 350px;
 }
 /* deials page style */
-#content #prouductmain{
+#content #prouductmain {
   margin-bottom: 30px;
 }
-#content #prouductmain .price{
+#content #prouductmain .price {
   font-size: 30px;
   font-weight: 300;
   text-align: center;
   margin-top: 40px;
 }
-#content #mainimage{
-  box-shadow: 0 1px 5px rgba(0,0,0,0.7);
+#content #mainimage {
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
 }
-#content .thumb a{
+#content .thumb a {
   display: block;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
   border: solid 2px transparent;
-  
 }
-#content .thumb .img-responsive{
+#content .thumb .img-responsive {
   height: 6em;
 }
 
 /* cart */
-#content #cart .table tbody tr td .img-responsive{
+#content #cart .table tbody tr td .img-responsive {
   width: 50px;
 }
-#content #cart .table tbody tr td input{
+#content #cart .table tbody tr td input {
   width: 40px;
   text-align: right;
 }
-#content #cart .table tbody tr td{
+#content #cart .table tbody tr td {
   vertical-align: middle;
-
 }
-#content #cart .table tfoot{
+#content #cart .table tfoot {
   font-size: 18px;
 }
-.box .box-footer{
+.box .box-footer {
   background: #f7f7f7;
   margin: 30px -20px -20px;
   padding: 20px;
@@ -305,37 +302,34 @@ text-transform: uppercase;
 }
 
 .box .box-footer:before,
-.box .box-footer:after{
+.box .box-footer:after {
   content: " ";
   display: table;
 }
-.box .box-footer:after{
+.box .box-footer:after {
   clear: both;
 }
-.box .box-header{
+.box .box-header {
   background: #f7f7f7;
-  margin: -20px -20px 0px -20px ;
+  margin: -20px -20px 0px -20px;
   padding: 20px;
   border-bottom: solid 1px #eeeeee;
 }
-#content #order-summary table{
-margin-top: 20px;
+#content #order-summary table {
+  margin-top: 20px;
 }
-#content #order-summary table td{
+#content #order-summary table td {
   color: #999999;
 }
 #content #order-summary table tr.total td,
-#content #order-summary table tr.total th{
+#content #order-summary table tr.total th {
   font-size: 18px;
   color: #555555;
   font-weight: 700;
 }
-#content #order-summary p{
+#content #order-summary p {
   margin-top: 40px;
 }
-
-
-
 
 /* footer */
 #footer {
@@ -347,7 +341,6 @@ margin-top: 20px;
   text-decoration: none;
 }
 #footer ul a {
-  
   text-decoration: none;
   color: #999999;
 }

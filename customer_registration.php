@@ -65,7 +65,10 @@ include('includes/header.php'); ?>
                     </div>
                     <div class="form-group">
                         <label for="">Image</label>
-                        <input type="file" name="c_image" id="image" class="form-control" placeholder="Image" required>
+                        <input type="file" name="c_image" id="image" class="form-control" placeholder="Image" accept="image/" required>
+                        <div class="image-preview" id="imagepre">
+                            <img id="imagepreview" class="imgclass" src="" alt="image" >
+                        </div>
                     </div>
                     <div class="text-center">
                         <button type="submit" name="submit" class="btn btn-primary">
@@ -80,6 +83,30 @@ include('includes/header.php'); ?>
     </div>
     <!-- container close -->
 </div>
+<script>
+    const impFile = document.getElementById("image");
+    const previewCon = document.getElementById("imagepre");
+    const previewImage = previewCon.querySelector(".imgclass");
+    impFile.addEventListener("change", function() {
+        const file = this.files[0];
+        console.log(file);
+        if (file) {
+            const reader = new FileReader();
+            reader.addEventListener("load", function() {
+                previewImage.setAttribute("src", this.result);
+            });
+            reader.readAsDataURL(file);
+        }
+    });
+    // function showPreview(){
+    //     if(event.target.files.lenght > 0){
+    //         var src=URL.createObjectURL(event.target.files[0]);
+    //         var preview=document.getElementById("imagepreview");
+    //         preview.src=src;
+    //         preview.style.display="block";
+    //     }
+    // }
+</script>
 <!-- content close -->
 <?php include('includes/footer.php');
 if (isset($_POST['submit'])) {
@@ -101,16 +128,16 @@ if (isset($_POST['submit'])) {
         move_uploaded_file($image_tmp_name, "customer/customer_images/$image_name");
         $sel_cart = "SELECT * FROM cart WHERE ip_add='$ip'";
         $run_cust_cart = mysqli_query($con, $sel_cart);
-        if (mysqli_num_rows($run_cust_cart)>0) {
-            $_SESSION['customer_phone']=$contect_numbe;
-            $_SESSION['customer_name']=$name;
-            echo"<script>alert('You Have Been Registerd Successfully');
+        if (mysqli_num_rows($run_cust_cart) > 0) {
+            $_SESSION['customer_phone'] = $contect_numbe;
+            $_SESSION['customer_name'] = $name;
+            echo "<script>alert('You Have Been Registerd Successfully');
             window.open('checkout.php','_self');
             </script>";
-        }else {
-            $_SESSION['customer_phone']=$contect_numbe;
-            $_SESSION['customer_name']=$name;
-            echo"<script>alert('You Have Been Registerd Successfully');
+        } else {
+            $_SESSION['customer_phone'] = $contect_numbe;
+            $_SESSION['customer_name'] = $name;
+            echo "<script>alert('You Have Been Registerd Successfully');
             window.open('./','_self');
             </script>";
         }

@@ -38,7 +38,7 @@ function add_to_cart()
             $query = "INSERT INTO `cart`(`p_id`, `ip_add`, `qty`, `size`) VALUES ('$p_id','$ip_add','$p_qyt','$p_size')";
             $run_query = mysqli_query($db, $query);
             if ($run_query) {
-                if (!isset($_POST['product_qty']) && !isset($_POST['product_size'])) {
+                if ($p_qyt==1 && $p_size==1) {
                     echo "<script>alert('prodect is add to cart')</script>";
                     echo "<script>window.open('detials.php?pro_id=$p_id','_self');</script>";
                 } else {
@@ -97,7 +97,7 @@ function getpro()
         <div class='col-sm-4 col-sm-6 single'>
             <div class='product'>
                 <a href='detials.php?pro_id=$pro_id'>
-                    <img src='admin_area/prouduct_img/$pro_img1' class='img-responsive'>
+                    <img src='admin_area/prouduct_img/$pro_img1' class='img-responsive' style='height:10em;width:100%;'>
                 </a>
                 <div class='text'>
                     <h3>
@@ -208,7 +208,6 @@ function getcatdispay()
         $row_cate_d = mysqli_fetch_array($run_cate_d);
         $cate_title = $row_cate_d[1];
         $cate_dese = $row_cate_d[2];
-
         $get_prodects = "SELECT * FROM `products` WHERE cat_id='$cat_id'";
         $run_prodect = mysqli_query($db, $get_prodects);
         $count = mysqli_num_rows($run_prodect);
@@ -339,10 +338,10 @@ function getreletivepro()
         $pro_price = $row_prodect[8];
         $pro_img1 = $row_prodect[5];
         echo "
-        <div class='col-sm-4 col-sm-6 single'>
+        <div class='col-sm-4 col-lg-4 col-md-4 '>
             <div class='product'>
                 <a href='detials.php?pro_id=$pro_id'>
-                    <img src='admin_area/prouduct_img/$pro_img1' class='img-responsive'>
+                    <img src='admin_area/prouduct_img/$pro_img1' class='img-responsive' style='height:10em;width:100%;'>
                 </a>
                 <div class='text'>
                     <h3>
