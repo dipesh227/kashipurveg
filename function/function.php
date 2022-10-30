@@ -1,6 +1,6 @@
 <?php
 // $db = mysqli_connect("localhost", "root", "", "kashipurvegadda");
-$db = mysqli_connect("bybwrw6uurgujryuwdyz-mysql.services.clever-cloud.com","bybwrw6uurgujryuwdyz","uwb5jr3dsdzm2ole","mnVyapBrcKy3wH767Lp7");
+$db = mysqli_connect("bybwrw6uurgujryuwdyz-mysql.services.clever-cloud.com","uwb5jr3dsdzm2ole","mnVyapBrcKy3wH767Lp7","bybwrw6uurgujryuwdyz",3306);
 // for user ip
 function get_user_id()
 {
